@@ -89,6 +89,55 @@
                 transform: rotate(180deg);
             }
         }
+        
+        /* Mobile menu toggle button */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 992px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .main-nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 20px 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .main-nav.active ul {
+                display: block;
+            }
+            
+            .main-nav li {
+                display: block;
+                margin: 0;
+                text-align: center;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -275,6 +324,16 @@
                         this.closest('.dropdown').classList.remove('active');
                     }
                 });
+            });
+        });
+        
+        // Handle mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mainNav = document.querySelector('.main-nav');
+            
+            hamburger.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
             });
         });
     </script>
