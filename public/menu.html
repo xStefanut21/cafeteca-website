@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu - Cafeteca</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="/images/main.jpg" alt="Cafeteca Logo" class="logo">
+                <h1 class="site-title">Cafeteca</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Acasă</a></li>
+                    <li><a href="menu.html" class="active">Meniu</a></li>
+                    <li><a href="#despre">Despre Noi</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin/login.html" class="admin-login">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav" id="categoryNav">
+        <div class="container">
+            <ul>
+                <li><a href="#specialty-coffee" class="active">Cafea</a></li>
+                <li><a href="#lemonades">Limonade</a></li>
+                <li><a href="#soft-drinks">Băuturi Răcoritoare</a></li>
+                <li><a href="#coffee-cocktails">Cocktailuri cu Cafea</a></li>
+                <li><a href="#cocktails">Cocktailuri</a></li>
+                <li><a href="#non-alcoholic">Băuturi Nealcoolice</a></li>
+                <li><a href="#beer">Bere</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <div class="container">
+
+            <!-- Specialty Coffee Section -->
+            <section id="specialty-coffee" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-coffee"></i>
+                    <span>Cafea de Specialitate</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Espresso/Doppio</h3>
+                    <p>Shot simplu sau dublu din cea mai bună cafea espresso</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Macchiato</h3>
+                    <p>Espresso cu un strop de lapte aburit</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Long Black / Filter</h3>
+                    <p>Cafea neagră bogată și cremoasă</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Americano</h3>
+                    <p>Espresso cu apă fierbinte</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Flat White / Cappucino / Caffe Latte</h3>
+                    <p>Espresso clasic cu lapte aburit în stilul preferat</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cortado</h3>
+                    <p>Părți egale espresso și lapte cald</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Iced Latte</h3>
+                    <p>Espresso răcit cu lapte pe gheață</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Affogato</h3>
+                    <p>Înghețată de vanilie cu un shot de espresso fierbinte</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Mocha</h3>
+                    <p>Espresso cu ciocolată și lapte aburit</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Frozen Mocha</h3>
+                    <p>Mocha mixat cu gheață</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Frozen Cookie</h3>
+                    <p>Cafea rece cu aromă de biscuiți</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Iced Frappuccino</h3>
+                    <p>Băutură rece din cafea mixată</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>V60</h3>
+                    <p>Cafea preparată manual prin turnare</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Tea</h3>
+                    <p>Selecție de ceaiuri premium, disponibile fierbinți sau reci</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Hot Chocolate</h3>
+                    <p>Bogat și cremos, disponibil în variantele clasică, neagră sau albă</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Prana Chai Latte</h3>
+                    <p>Disponibil cald sau rece</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Matcha Latte</h3>
+                    <p>Disponibil cald sau rece</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Turmeric Latte</h3>
+                    <p>Lapte auriu cu mirodenii calde</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cold Brew Tonic</h3>
+                    <p>Cafea cold brew cu apă tonică</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cold Brew Latte</h3>
+                    <p>Cold brew cremos cu lapte</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Espresso Tonic</h3>
+                    <p>Espresso cu apă tonică și citrice</p>
+                </div>
+            </div>
+
+            </section>
+            
+            <!-- Lemonades Section -->
+            <section id="lemonades" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-lemon"></i>
+                    <span>Limonade</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Classic Lemonade</h3>
+                    <p>Lămâie proaspăt storsă cu un echilibru perfect între dulce și acrișor</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Flavored Lemonade</h3>
+                    <p>Alege între căpșuni, zmeură sau piersici</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cafeteca Lemonade</h3>
+                    <p>Rețeta noastră semnătură cu un strop de mentă și busuioc</p>
+                </div>
+            </div>
+            
+            </section>
+            
+            <!-- Soft Drinks Section -->
+            <section id="soft-drinks" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <span>Băuturi Răcoritoare</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Flavoured Mineral Water</h3>
+                    <p>Apă minerală răcoritoare cu arome naturale de fructe</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Mineral Water Harghita</h3>
+                    <p>Apă minerală carbogazoasă naturală din izvoarele Harghitei</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Still Water Aqua Carpatica</h3>
+                    <p>Apă minerală plată premium din Munții Carpați</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Hartridge's Artisanal</h3>
+                    <p>Alege între aromele Cola, Ginger Beer, Lămâiță cu trandafiri sau Păpădie</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Fresh Orange Juice</h3>
+                    <p>Suc proaspăt stors de portocale, servit rece</p>
+                </div>
+            </div>
+
+            </section>
+            
+            <!-- Specialty Coffee Cocktails Section -->
+            <section id="coffee-cocktails" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-cocktail"></i>
+                    <span>Cocktailuri Speciale cu Cafea</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Espresso Martini</h3>
+                    <p>Vodcă, lichior de cafea și espresso proaspăt, agitat perfect</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Death By Morning</h3>
+                    <p>Cocktailul nostru semnătură de cafea cu un plus de energie</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Irish Coffee</h3>
+                    <p>Cafea fierbinte, whiskey irlandez și frișcă, în stil clasic</p>
+                </div>
+            </div>
+
+            </section>
+            
+            <!-- Cocktails Section -->
+            <section id="cocktails" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <span>Cocktailuri</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Aperol Spritz</h3>
+                    <p>Aperol, prosecco și apă minerală cu o felie de portocală</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Hugo</h3>
+                    <p>Sirop de soc, prosecco, apă minerală și mentă proaspătă</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Strawberry Collins</h3>
+                    <p>Gin, căpșune proaspete, suc de lămâie și apă minerală</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Whiskey/Amaretto Sour</h3>
+                    <p>Whiskey sau amaretto sour clasic cu o notă modernă</p>
+                </div>
+            </div>
+
+            </section>
+            
+            <!-- Non-Alcoholic Cocktails Section -->
+            <section id="non-alcoholic" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-glass-cheers"></i>
+                    <span>Cocktailuri Nealcoolice</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Spicy Apple</h3>
+                    <p>Suc de mere cu ghimbir și un strop de chili</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Shirley Temple</h3>
+                    <p>Suc de lămâie cu grenadină și cireșe maraschino</p>
+                </div>
+            </div>
+
+            </section>
+            
+            <!-- Beer Section -->
+            <section id="beer" class="menu-section">
+                <h2 class="menu-section-title">
+                    <i class="fas fa-beer"></i>
+                    <span>Bere</span>
+                    <div class="title-line"></div>
+                </h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Corona</h3>
+                    <p>Bere lager mexicană importată cu gust neted și proaspăt</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Grivita Blonda</h3>
+                    <p>Bere blondă românească locală, ușoară și răcoritoare</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Grivita Blonda Nefiltrata</h3>
+                    <p>Versiunea nefiltrată a berii noastre blonde locale</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Grivita Neagra Nefiltrata</h3>
+                    <p>Bere neagră nefiltrată cu arome bogate de malț</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cafeteca</h3>
+                    <p>123 Coffee Street</p>
+                    <p>Bucharest, Romania</p>
+                    <p>+40 123 456 789</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Program</h3>
+                    <p>Lun-Vin: 7:00 - 20:00</p>
+                    <p>Sâm: 8:00 - 21:00</p>
+                    <p>Dum: 9:00 - 18:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Urmărește-ne</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cafeteca. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/menu-interaction.js"></script>
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

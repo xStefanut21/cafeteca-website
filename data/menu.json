@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": "5b5895fc-0c18-4336-a1e1-7819ddc4f29a",
+      "name": "Cappuccino",
+      "category": "coffee",
+      "price": 4.5,
+      "description": "Espresso with steamed milk and foam",
+      "status": "available",
+      "imageUrl": "/images/coffee-placeholder.jpg"
+    },
+    {
+      "id": "e1411bb6-1d99-4abe-9c8a-8009ef27c17b",
+      "name": "Croissant",
+      "category": "pastries",
+      "price": 3.25,
+      "description": "Buttery, flaky pastry",
+      "status": "available",
+      "imageUrl": "/images/pastry-placeholder.jpg"
+    },
+    {
+      "id": "685b4e6d-382f-48bc-b29d-e296f141a393",
+      "name": "Avocado Toast",
+      "category": "food",
+      "price": 8.99,
+      "description": "Sourdough bread with smashed avocado, cherry tomatoes, and feta",
+      "status": "available",
+      "imageUrl": "/images/food-placeholder.jpg"
+    },
+    {
+      "name": "capucina balerina",
+      "category": "coffee",
+      "price": 2,
+      "status": "available",
+      "description": "acacas",
+      "id": "cbc3c67e-687e-4803-aefb-7daae23bf789"
+    }
+  ]
+}

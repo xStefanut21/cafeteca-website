@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bb8a6b42-2290-4a70-86a4-14e2f9b0313a",
+    "title": "Live Jazz Night",
+    "description": "Join us for an evening of smooth jazz with local artists",
+    "date": "2025-09-06",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "status": "active",
+    "imageUrl": "/images/event-placeholder.jpg"
+  },
+  {
+    "id": "6bb87c44-c9dd-4bc9-a676-f63a007e13aa",
+    "title": "Latte Art Workshop",
+    "description": "Learn the art of latte making and decorating",
+    "date": "2025-09-09",
+    "startTime": "14:00",
+    "endTime": "16:00",
+    "status": "active",
+    "imageUrl": "/images/workshop-placeholder.jpg"
+  }
+]
