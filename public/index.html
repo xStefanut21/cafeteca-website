@@ -2,142 +2,11 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteca - Cafenea Artizanală</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Dropdown styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--light-beige);
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            z-index: 1000;
-            top: 100%;
-            left: 0;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s ease;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-            padding-left: 20px;
-        }
-        
-        .dropdown > a::after {
-            content: '\f078';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-left: 6px;
-            font-size: 0.8em;
-        }
-        
-        @media (max-width: 992px) {
-            .dropdown {
-                width: 100%;
-            }
-            
-            .dropdown-content {
-                position: static;
-                display: none;
-                box-shadow: none;
-                padding-left: 20px;
-                opacity: 1;
-                transform: none;
-                transition: none;
-                background-color: transparent;
-            }
-            
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-            
-            .dropdown > a::after {
-                content: '\f077';
-                float: right;
-                transition: transform 0.3s ease;
-            }
-            
-            .dropdown.active > a::after {
-                transform: rotate(180deg);
-            }
-        }
-        
-        /* Mobile menu toggle button */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1000;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 992px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .main-nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: #fff;
-                padding: 20px 0;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            
-            .main-nav.active ul {
-                display: block;
-            }
-            
-            .main-nav li {
-                display: block;
-                margin: 0;
-                text-align: center;
-            }
-            
-            .main-nav a {
-                display: block;
-                padding: 10px 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -151,17 +20,9 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Acasă</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Meniu <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="menu.html#espresso">Espresso</a>
-                            <a href="menu.html#filtru">Cafea la Filtru</a>
-                            <a href="menu.html#ceai">Ceaiuri</a>
-                            <a href="menu.html#desert">Deserturi</a>
-                        </div>
-                    </li>
-                    <li><a href="#despre">Despre Noi</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="menu.html">Meniu</a></li>
+                    <li><a href="despre.html">Despre Noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="admin/login.html" class="admin-login">Admin</a></li>
                 </ul>
             </nav>
