@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="admin-dashboard">
     <div class="admin-container">
@@ -19,24 +20,24 @@
                     <i class="fas fa-coffee"></i>
                     <h2>Cafeteca</h2>
                 </div>
-                <p>Admin Dashboard</p>
+                <p>Panou de administrare</p>
             </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active" data-section="dashboard">
-                        <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                        <a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a>
                     </li>
                     <li data-section="menu">
-                        <a href="#"><i class="fas fa-utensils"></i> Menu Management</a>
+                        <a href="#menu"><i class="fas fa-utensils"></i> Gestiune Meniu</a>
+                    </li>
+                    <li data-section="categories">
+                        <a href="#categories"><i class="fas fa-tags"></i> Gestiune Categorii</a>
                     </li>
                     <li data-section="events">
-                        <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+                        <a href="#events"><i class="fas fa-calendar-alt"></i> Evenimente</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Deconectare</a>
                     </li>
                 </ul>
             </nav>
@@ -46,8 +47,8 @@
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="user-details">
-                        <span class="user-name">Admin User</span>
-                        <span class="user-role">Administrator</span>
+                        <span class="user-name">Administrator</span>
+                        <span class="user-role">Admin</span>
                     </div>
                 </div>
             </div>
@@ -61,17 +62,9 @@
                     <button class="sidebar-toggle">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+                    <h1><i class="fas fa-tachometer-alt"></i> <span id="page-title">Dashboard</span></h1>
                 </div>
                 <div class="nav-right">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search...">
-                    </div>
-                    <div class="notifications">
-                        <i class="far fa-bell"></i>
-                        <span class="badge">3</span>
-                    </div>
                     <div class="user-avatar">
                         <i class="fas fa-user-circle"></i>
                     </div>
@@ -84,59 +77,23 @@
                 <section id="dashboard-section" class="dashboard-section active">
                     <div class="dashboard-cards">
                         <div class="card">
-                            <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-color), #8b5a2b);">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #5e4a3e, #8b5a2b);">
                                 <i class="fas fa-coffee"></i>
                             </div>
                             <div class="card-info">
-                                <h3>Menu Items</h3>
-                                <span class="count">24</span>
-                                <span class="trend up"><i class="fas fa-arrow-up"></i> 12%</span>
+                                <h3>Produse în meniu</h3>
+                                <span class="count" id="products-count">0</span>
+                                <span class="trend up"><i class="fas fa-coffee"></i> Gestionare</span>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #8abf9b, #a5c4b8);">
                                 <i class="fas fa-calendar-check"></i>
                             </div>
                             <div class="card-info">
-                                <h3>Upcoming Events</h3>
-                                <span class="count">5</span>
-                                <span class="trend up"><i class="fas fa-arrow-up"></i> 3 new</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-icon" style="background-color: #f6c23e;">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="card-info">
-                                <h3>Today's Reservations</h3>
-                                <span class="count">12</span>
-                                <span class="trend down"><i class="fas fa-arrow-down"></i> 2%</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-icon" style="background-color: #e74a3b;">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="card-info">
-                                <h3>Monthly Revenue</h3>
-                                <span class="count">$8,542</span>
-                                <span class="trend up"><i class="fas fa-arrow-up"></i> 8.5%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dashboard-charts">
-                        <div class="chart-container">
-                            <div class="chart-header">
-                                <h3>Monthly Sales</h3>
-                                <div class="chart-options">
-                                    <button class="active">This Year</button>
-                                    <button>Last Year</button>
-                                </div>
-                            </div>
-                            <div class="chart-placeholder">
-                                <p>Sales chart will be displayed here</p>
-                                <!-- In a real app, you would use a charting library like Chart.js -->
+                                <h3>Categorii</h3>
+                                <span class="count" id="categories-count">7</span>
+                                <span class="trend"><i class="fas fa-tags"></i> Categorii active</span>
                             </div>
                         </div>
                     </div>
@@ -145,152 +102,225 @@
                 <!-- Menu Management Section -->
                 <section id="menu-section" class="dashboard-section">
                     <div class="section-header">
-                        <h2><i class="fas fa-utensils"></i> Menu Management</h2>
-                        <button class="btn btn-primary" id="addMenuItem">
-                            <i class="fas fa-plus"></i> Add New Item
+                        <h2><i class="fas fa-utensils"></i> Gestiune Meniu</h2>
+                        <button class="btn btn-primary" id="addProductBtn">
+                            <i class="fas fa-plus"></i> Adaugă Produs
                         </button>
                     </div>
                     
-                    <div class="menu-categories">
-                        <div class="category-tabs">
-                            <button class="tab-btn active" data-category="all">All Items</button>
-                            <button class="tab-btn" data-category="coffee">Coffee</button>
-                            <button class="tab-btn" data-category="espresso">Espresso</button>
-                            <button class="tab-btn" data-category="tea">Tea</button>
-                            <button class="tab-btn" data-category="food">Food</button>
-                        </div>
-                        
-                        <div class="menu-items-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Price</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><div class="item-image"><img src="../../images/coffee1.jpg" alt="Cappuccino"></div></td>
-                                        <td>Cappuccino</td>
-                                        <td>Espresso</td>
-                                        <td>$4.50</td>
-                                        <td><span class="status-badge available">Available</span></td>
-                                        <td class="actions">
-                                            <button class="btn-icon edit" title="Edit"><i class="fas fa-edit"></i></button>
-                                            <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <!-- More menu items would be dynamically loaded here -->
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table id="productsTable" class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nume</th>
+                                    <th>Preț</th>
+                                    <th>Categorie</th>
+                                    <th>Descriere</th>
+                                    <th>Acțiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Products will be loaded here -->
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
-                <!-- Events Management Section -->
-                <section id="events-section" class="dashboard-section">
+                <!-- Categories Section -->
+                <section id="categories-section" class="dashboard-section">
                     <div class="section-header">
-                        <h2>Events Management</h2>
-                        <button class="btn btn-primary" id="addEvent">
-                            <i class="fas fa-plus"></i> Add New Event
+                        <h2><i class="fas fa-tags"></i> Gestiune Categorii</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                            <i class="fas fa-plus"></i> Adaugă Categorie
                         </button>
                     </div>
                     
-                    <div class="events-grid">
-                        <!-- Event cards would be dynamically loaded here -->
-                        <div class="event-card">
-                            <div class="event-image">
-                                <img src="../../images/event1.jpg" alt="Coffee Tasting">
-                                <div class="event-date">
-                                    <span class="day">15</span>
-                                    <span class="month">SEP</span>
-                                </div>
-                            </div>
-                            <div class="event-details">
-                                <h3>Coffee Tasting Evening</h3>
-                                <p class="event-time"><i class="far fa-clock"></i> 6:00 PM - 9:00 PM</p>
-                                <p class="event-description">Join us for an evening of coffee tasting from around the world.</p>
-                                <div class="event-actions">
-                                    <span class="status-badge active">Active</span>
-                                    <div class="action-buttons">
-                                        <button class="btn-icon edit" title="Edit"><i class="fas fa-edit"></i></button>
-                                        <button class="btn-icon delete" title="Delete"><i class="fas fa-trash"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- More event cards would be here -->
+                    <div class="table-responsive">
+                        <table id="categoriesTable" class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nume Categorie</th>
+                                    <th>Număr Produse</th>
+                                    <th>Acțiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Categories will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Events Section -->
+                <section id="events-section" class="dashboard-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Gestiune Evenimente</h2>
+                        <p>Disponibil în versiunea următoare</p>
                     </div>
                 </section>
             </div>
         </main>
     </div>
 
-    <!-- Modal for adding/editing menu items -->
-    <div class="modal" id="menuItemModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Add New Menu Item</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="menuItemForm">
-                    <div class="form-group">
-                        <label for="itemName">Item Name</label>
-                        <input type="text" id="itemName" name="itemName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="itemCategory">Category</label>
-                        <select id="itemCategory" name="itemCategory" required>
-                            <option value="">Select a category</option>
-                            <option value="coffee">Coffee</option>
-                            <option value="espresso">Espresso</option>
-                            <option value="tea">Tea</option>
-                            <option value="food">Food</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="itemPrice">Price ($)</label>
-                            <input type="number" id="itemPrice" name="itemPrice" min="0" step="0.01" required>
+    <!-- Modal for adding/editing products -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Adaugă Produs Nou</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="productForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="productId" name="productId">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nume produs</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
-                        <div class="form-group">
-                            <label for="itemStatus">Status</label>
-                            <select id="itemStatus" name="itemStatus" required>
-                                <option value="available">Available</option>
-                                <option value="unavailable">Unavailable</option>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Preț (RON)</label>
+                            <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Categorie</label>
+                            <select class="form-select" id="category" name="category" required>
+                                <!-- Categories will be loaded dynamically -->
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="itemDescription">Description</label>
-                        <textarea id="itemDescription" name="itemDescription" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="itemImage">Item Image</label>
-                        <div class="file-upload">
-                            <input type="file" id="itemImage" name="itemImage" accept="image/*">
-                            <label for="itemImage">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>Choose an image or drag it here</span>
-                            </label>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Descriere</label>
+                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                         </div>
-                        <div class="image-preview" id="imagePreview"></div>
                     </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-secondary close-modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Item</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulează</button>
+                        <button type="submit" class="btn btn-primary">Salvează</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Add Category Modal -->
+    <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCategoryModalLabel">Adaugă Categorie Nouă</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="addCategoryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="categoryName" class="form-label">Nume Categorie</label>
+                            <input type="text" class="form-control" id="categoryName" name="name" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulează</button>
+                        <button type="submit" class="btn btn-primary">Salvează</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Category Modal -->
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCategoryModalLabel">Editează Categorie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="editCategoryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="editCategoryName" class="form-label">Nume Categorie</label>
+                            <input type="text" class="form-control" id="editCategoryName" name="name" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulează</button>
+                        <button type="submit" class="btn btn-primary">Salvează modificările</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/admin-dashboard.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="js/product-manager.js"></script>
+    <script src="js/category-manager.js"></script>
+    <script>
+        // Navigation between sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the active section based on URL hash or default to dashboard
+            function showActiveSection() {
+                const hash = window.location.hash || '#dashboard';
+                const sectionId = hash.replace('#', '') + '-section';
+                const section = document.getElementById(sectionId);
+                
+                // Hide all sections
+                document.querySelectorAll('.dashboard-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Remove active class from all nav items
+                document.querySelectorAll('.sidebar-nav li').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Show the selected section
+                if (section) {
+                    section.classList.add('active');
+                    document.querySelector(`.sidebar-nav li[data-section="${hash.replace('#', '')}"]`).classList.add('active');
+                    document.getElementById('page-title').textContent = section.querySelector('h2').textContent;
+                }
+            }
+            
+            // Handle navigation clicks
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.parentElement.getAttribute('data-section');
+                    window.location.hash = section;
+                    showActiveSection();
+                });
+            });
+            
+            // Show active section on page load
+            showActiveSection();
+            
+            // Handle window hash change
+            window.addEventListener('hashchange', showActiveSection);
+            
+            // Toggle sidebar on mobile
+            document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+                document.querySelector('.admin-container').classList.toggle('sidebar-collapsed');
+            });
+            
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Sigur doriți să vă deconectați?')) {
+                    localStorage.removeItem('admin_logged_in');
+                    window.location.href = 'login.html';
+                }
+            });
+            
+            // Update dashboard counts
+            function updateDashboardCounts() {
+                const products = JSON.parse(localStorage.getItem('cafeteca_products') || '[]');
+                document.getElementById('products-count').textContent = products.length;
+            }
+            
+            updateDashboardCounts();
+        });
+    </script>
 </body>
 </html>

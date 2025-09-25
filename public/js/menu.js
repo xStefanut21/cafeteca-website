@@ -1,4 +1,148 @@
+// Initialize products when the script loads
+if (typeof ProductManager === 'undefined') {
+    // If ProductManager is not loaded, initialize with default products
+    const defaultProducts = [
+        { id: 1, name: 'Espresso', price: 8, description: 'Cafea puternică și aromată', category: 'Specialty Coffee' },
+        { id: 2, name: 'Limonadă Clasică', price: 12, description: 'Lămâie proaspăt storsă', category: 'Lemonades' },
+        { id: 3, name: 'Cola', price: 10, description: 'Băutură răcoritoare cu cola', category: 'Soft Drinks' },
+        { id: 4, name: 'Irish Coffee', price: 18, description: 'Cafea cu whiskey și frișcă', category: 'Espresso & Spirits' },
+        { id: 5, name: 'Mojito', price: 20, description: 'Rom, mentă, lămâie, apă minerală', category: 'Cocktails' },
+        { id: 6, name: 'Fresh de portocale', price: 12, description: 'Portocale proaspăt stoarse', category: 'Mocktails' },
+        { id: 7, name: 'Bere la halbă', price: 10, description: 'Bere rece la halbă', category: 'Beer' }
+    ];
+    
+    if (!localStorage.getItem('cafeteca_products')) {
+        localStorage.setItem('cafeteca_products', JSON.stringify(defaultProducts));
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Load and display products
+    // Function to get categories from localStorage or use default categories
+    function getCategories() {
+        // Try to get categories from localStorage first
+        const savedCategories = JSON.parse(localStorage.getItem('cafeteca_categories') || '[]');
+        
+        // If no categories in localStorage, use default categories
+        if (savedCategories.length === 0) {
+            return [
+                'Specialty Coffee',
+                'Lemonades',
+                'Soft Drinks',
+                'Cocktails',
+                'Beer',
+                'Mocktails',
+                'Espresso & Spirits'
+            ];
+        }
+        
+        return savedCategories;
+    }
+    
+    function loadMenuProducts() {
+        // Get products from localStorage or use empty array if not found
+        const products = JSON.parse(localStorage.getItem('cafeteca_products') || '[]');
+        
+        // Group products by category
+        const productsByCategory = {};
+        const categories = getCategories();
+        
+        // Initialize categories with empty arrays
+        categories.forEach(category => {
+            productsByCategory[category] = [];
+        });
+        
+        // Group products by category
+        products.forEach(product => {
+            if (product.category) {
+                if (!productsByCategory[product.category]) {
+                    // If we encounter a category that's not in our list, add it
+                    categories.push(product.category);
+                    productsByCategory[product.category] = [];
+                }
+                productsByCategory[product.category].push(product);
+            }
+        });
+        
+        // Sort products by name within each category
+        Object.keys(productsByCategory).forEach(category => {
+            productsByCategory[category].sort((a, b) => a.name.localeCompare(b.name));
+        });
+        
+        // Update the menu with products
+        updateMenuWithProducts(productsByCategory);
+    }
+    
+    function updateMenuWithProducts(productsByCategory) {
+        // Get the menu container
+        const menuContainer = document.querySelector('.menu-container .container');
+        if (!menuContainer) return;
+        
+        // Create a new container for the menu sections
+        const newMenuContainer = document.createElement('div');
+        newMenuContainer.className = 'container';
+        
+        // Create a menu section for each category that has products
+        Object.entries(productsByCategory).forEach(([category, products]) => {
+            if (products.length === 0) return;
+            
+            // Create section element
+            const section = document.createElement('section');
+            const categoryId = category.toLowerCase().replace(/\s+/g, '-');
+            section.id = categoryId;
+            section.className = 'menu-section';
+            
+            // Section title
+            const title = document.createElement('h2');
+            title.className = 'menu-section-title';
+            title.innerHTML = `<i class="fas fa-${getCategoryIcon(category)}"></i> ${category}`;
+            
+            // Menu grid
+            const grid = document.createElement('div');
+            grid.className = 'menu-grid';
+            
+            // Add products to the grid
+            products.forEach(product => {
+                const item = document.createElement('div');
+                item.className = 'menu-item';
+                item.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p class="price">${formatPrice(product.price)}</p>
+                    <p class="description">${product.description}</p>
+                `;
+                grid.appendChild(item);
+            });
+            
+            // Assemble the section
+            section.appendChild(title);
+            section.appendChild(grid);
+            newMenuContainer.appendChild(section);
+        });
+        
+        // Replace the old menu content with the new one
+        menuContainer.parentNode.replaceChild(newMenuContainer, menuContainer);
+    }
+    
+    function getCategoryIcon(category) {
+        const icons = {
+            'Specialty Coffee': 'coffee',
+            'Lemonades': 'lemon',
+            'Soft Drinks': 'glass-whiskey',
+            'Cocktails': 'cocktail',
+            'Beer': 'beer',
+            'Mocktails': 'glass-whiskey',
+            'Espresso & Spirits': 'coffee'
+        };
+        return icons[category] || 'utensils';
+    }
+    
+    function formatPrice(price) {
+        return `${parseFloat(price).toFixed(2)} RON`;
+    }
+    
+    // Initial load
+    loadMenuProducts();
+    
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const mainNav = document.querySelector('.main-nav');
